@@ -1,2 +1,11 @@
-<p>weather works!</p>
-{{data}}    
+{{ loading ? "Loading..." : "" }}
+
+@if (data) {
+<div>
+  <h2>{{ data.main.temp }}°C</h2>
+  <p>
+    <strong>{{ data.name }}</strong>
+  </p>
+  <p>{{ data.weather && data.weather[0].main }}</p>
+</div>
+}
